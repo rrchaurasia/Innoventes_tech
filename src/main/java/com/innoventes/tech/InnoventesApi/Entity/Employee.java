@@ -36,7 +36,7 @@ public class Employee implements Serializable {
 	@Column
 	private Date dateOfBirth;
 
-	@ManyToMany(mappedBy = "employee",cascade =CascadeType.PERSIST , fetch = FetchType.EAGER)
+	@ManyToMany(mappedBy = "employee",fetch = FetchType.EAGER)
 	private Set<Address> address = new HashSet();
 
 	public Employee(String name, Date dateOfBirth) {
