@@ -1,11 +1,10 @@
 package com.innoventes.tech.InnoventesApi.Entity;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -13,7 +12,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
-import javax.persistence.NamedQuery;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -34,18 +32,18 @@ public class Employee implements Serializable {
 	private String name;
 
 	@Column
-	private Date dateOfBirth;
+	private LocalDate dateOfBirth;
 
 	@ManyToMany(mappedBy = "employee",fetch = FetchType.EAGER)
-	private Set<Address> address = new HashSet();
+	private Set<Address> address = new HashSet<Address>();
 
-	public Employee(String name, Date dateOfBirth) {
+	public Employee(String name, LocalDate dateOfBirth) {
 		super();
 		this.name = name;
 		this.dateOfBirth = dateOfBirth;
 	}
 
-	public Employee(String name, Date dateOfBirth, Set<Address> address) {
+	public Employee(String name, LocalDate dateOfBirth, Set<Address> address) {
 		super();
 		this.name = name;
 		this.dateOfBirth = dateOfBirth;
@@ -83,11 +81,11 @@ public class Employee implements Serializable {
 		this.name = name;
 	}
 
-	public Date getDateOfBirth() {
+	public LocalDate getDateOfBirth() {
 		return dateOfBirth;
 	}
 
-	public void setDateOfBirth(Date dateOfBirth) {
+	public void setDateOfBirth(LocalDate dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
 	}
 

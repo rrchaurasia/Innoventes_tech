@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.innoventes.tech.InnoventesApi.Dao.EmployeeService;
+import com.innoventes.tech.InnoventesApi.Dao.EmployeeDaoService;
 import com.innoventes.tech.InnoventesApi.Dao.EmployeeRepository;
 import com.innoventes.tech.InnoventesApi.Entity.Employee;
 
@@ -14,7 +14,7 @@ import com.innoventes.tech.InnoventesApi.Entity.Employee;
 public class InnoventesService {
 
 	@Autowired
-	private EmployeeService employeeDaoService;
+	private EmployeeDaoService employeeDaoService;
 	@Autowired
 	private EmployeeRepository employeeRepository;
 

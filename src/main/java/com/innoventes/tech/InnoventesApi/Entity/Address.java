@@ -4,10 +4,8 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -34,7 +32,7 @@ public class Address implements Serializable {
 
     @ManyToMany
     @JoinTable(name="Employee_Address",joinColumns = {@JoinColumn(name="addId")}, inverseJoinColumns = {@JoinColumn(name="empId")})
-	private Set<Employee> employee = new HashSet();
+	private Set<Employee> employee = new HashSet<Employee>();
 
 	public Address(String addLineOne, String addLineTwo, String city) {
 		super();

@@ -16,12 +16,6 @@ public class EmployeeDaoService {
 	@PersistenceContext
 	private EntityManager entityManager;
 	
-	
-	public long insert(Employee employee) {
-		entityManager.persist(employee);
-		return employee.getEmpId();
-	}
-	
 	public void deleteEmployee(Long id) {
 		Employee emp = entityManager.find(Employee.class, id);
 		entityManager.remove(emp);
